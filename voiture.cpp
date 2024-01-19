@@ -1,8 +1,8 @@
 #include "voiture.hpp"
 
 
-Voiture::Voiture(const std::string modele, const Type type, const int annee, int km): _modele(modele), _type(type), _annee(annee), _km(km){
-    if(_km/(2024-_annee) > 20000){
+Voiture::Voiture(std::string modele, Type type, int annee, int km): _modele(modele), _type(type), _annee(annee), _km(km){
+    if(_annee!=2024 && _km/(2024-_annee) > 20000 ){
         _utilisation="Beaucoup utilisee";
     }
     else {
@@ -10,7 +10,14 @@ Voiture::Voiture(const std::string modele, const Type type, const int annee, int
     }
 };
 
-
+bool Voiture::estUsee(){
+    if(_km/(2024-_annee) > 20000){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 std::string Voiture::getType(){
     switch(_type)
     {
