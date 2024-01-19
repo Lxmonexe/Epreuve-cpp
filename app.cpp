@@ -1,5 +1,6 @@
 #include "voiture.hpp"
 #include "conducteur.hpp"
+#include "taxis.hpp"
 #include "iostream"
 
 
@@ -25,7 +26,25 @@ int main(){
     std::cout<<informationConducteur(c1)<<std::endl;
     c1.addExperience(5);
     std::cout<<informationConducteur(c1)<<std::endl;
-    //Fin question 5
+    //Fin question 4
+    
+    
+    //Question 6
+    Taxis t("G7");
+    
+    
+    Voiture v4("Ford", Type::Essence, 2018, 120000);
+    Conducteur c3("michel", 34, v2);
+    Conducteur c2("jean", 34, v4);
+    t.ajouterConducteur(c1);
+    t.ajouterConducteur(c2);
+    t.ajouterConducteur(c3);
+    informationTaxis(t);
+    t.suppConducteur("michel");
+    informationTaxis(t);
+    t.echangeVoiture(c1,c2);
+    informationTaxis(t);
+
 
 
     return 0;
